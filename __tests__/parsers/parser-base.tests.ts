@@ -1,7 +1,7 @@
-import { Parser, IParseContext } from "../../src/parsers";
-import { ParseResult } from "../../src/parse-result";
-import { IInput } from "../../src/inputs/input";
-import { createArrayInput } from "../../src/inputs/array-input";
+import { Parser, IParseContext } from "../../parsers";
+import { ParseResult } from "../../parse-result";
+import { IInput } from "../../inputs/input";
+import { createArrayInput } from "../../inputs/array-input";
 
 describe("parsers.parser", () => {
     test("when given no subparsers, throws", () => {

@@ -1,7 +1,7 @@
-import { lookahead } from "../../src/parsers";
-import { createArrayInput } from "../../src/inputs";
+import { lookahead } from "../../parsers";
+import { createArrayInput } from "../../inputs";
 import { mockSuccess, mockFailure } from "../mock-parsers";
-import { ParseResult } from "../../src/parse-result";
+import { ParseResult } from "../../parse-result";
 
 describe("parsers.lookahead", () => {
     test("when the input matches", () => {

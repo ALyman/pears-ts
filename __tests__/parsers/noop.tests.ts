@@ -1,6 +1,6 @@
-import { noop, success, fail } from "../../src/parsers";
-import { createArrayInput } from "../../src/inputs";
-import { ParseResult } from "../../src/parse-result";
+import { noop, success, fail } from "../../parsers";
+import { createArrayInput } from "../../inputs";
+import { ParseResult } from "../../parse-result";
 
 describe("parsers.noop", () => {
     test("noop succeeds", () => {

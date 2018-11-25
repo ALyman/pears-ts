@@ -1,6 +1,6 @@
 import { toArray } from "iter-tools";
-import { IInput, createBufferInput, createArrayInput, createStringInput } from "../src/inputs";
-import { iterateValues, iterateInputs } from "../src/inputs/utils";
+import { IInput, createBufferInput, createArrayInput, createStringInput } from "../inputs";
+import { iterateValues, iterateInputs } from "../inputs/utils";
 
 describe.each([
     [createBufferInput, Buffer.from([65, 66, 67])],

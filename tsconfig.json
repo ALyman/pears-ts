@@ -10,11 +10,14 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./",
-    "esModuleInterop": true
+    "baseUrl": "./src",
+    "esModuleInterop": true,
+    "rootDirs": [
+      "./src"
+    ]
   },
   "include": [
-    "src/**/*"
+    "**/*"
   ],
   "exclude": [
     "node_modules",

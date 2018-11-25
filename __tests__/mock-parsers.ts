@@ -1,6 +1,6 @@
-import { IInput } from "../src/inputs";
-import { Parser } from "../src/parsers/parser-base";
-import { ParseResult, SuccessfulParseResult, FailedParseResult } from "../src/parse-result";
+import { IInput } from "../inputs";
+import { Parser } from "../parsers/parser-base";
+import { ParseResult, SuccessfulParseResult, FailedParseResult } from "../parse-result";
 
 class MockParser<T, R> extends Parser<T, R>{
     constructor(protected tryParse: (input: IInput<T>) => ParseResult<T, R>) {

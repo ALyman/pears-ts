@@ -1,6 +1,6 @@
 {
   "name": "pears",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pears is a strongly-typed parser-combinator framework written in TypeScript",
   "keywords": [
     "parse",
@@ -10,7 +10,7 @@
   ],
   "repository": "https://github.com/ALyman/pears-ts",
   "license": "MIT",
-  "author": "Alex Lyman",
+  "author": "Alex Lyman <alex@ajjlyman.com>",
   "files": [
     "lib"
   ],

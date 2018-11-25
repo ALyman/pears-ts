@@ -1,6 +1,6 @@
-import { match } from "../../src/parsers";
-import { createArrayInput } from "../../src/inputs";
-import { ParseResult } from "../../src/parse-result";
+import { match } from "../../parsers";
+import { createArrayInput } from "../../inputs";
+import { ParseResult } from "../../parse-result";
 
 describe("parsers.match", () => {
     test("when the input matches", () => {

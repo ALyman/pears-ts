@@ -1,6 +1,6 @@
-import { sequence } from "../../src/parsers";
-import { createArrayInput } from "../../src/inputs";
-import { ParseResult } from "../../src/parse-result";
+import { sequence } from "../../parsers";
+import { createArrayInput } from "../../inputs";
+import { ParseResult } from "../../parse-result";
 import { mockSuccess, mockFailure } from "../mock-parsers";
 
 describe("parsers.sequence", () => {

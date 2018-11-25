@@ -1,6 +1,6 @@
-import { alternative } from "../../src/parsers";
-import { createArrayInput } from "../../src/inputs";
-import { ParseResult } from "../../src/parse-result";
+import { alternative } from "../../parsers";
+import { createArrayInput } from "../../inputs";
+import { ParseResult } from "../../parse-result";
 
 import { mockSuccess, mockFailure } from "../mock-parsers";
 
