@@ -1,0 +1,1 @@
+Pears is a strongly-typed parser-combinator framework written in TypeScript
