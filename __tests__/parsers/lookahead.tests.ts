@@ -1,6 +1,6 @@
 import { lookahead } from "../../parsers";
 import { createArrayInput } from "../../inputs";
-import { mockSuccess, mockFailure } from "../mock-parsers";
+import { successParser, failureParser } from "../mock-parsers";
 import { ParseResult } from "../../parse-result";
 
 describe("parsers.lookahead", () => {
@@ -8,7 +8,7 @@ describe("parsers.lookahead", () => {
         const values = [1, 2, 3];
         var input = createArrayInput(values);
 
-        let p = lookahead(mockSuccess(1));
+        let p = lookahead(successParser(1));
         let result = p.parse(input);
 
         expect(result).toStrictEqual(ParseResult.successful(input, input, 1));
@@ -18,7 +18,7 @@ describe("parsers.lookahead", () => {
         const values = [1, 2, 3];
         var input = createArrayInput(values);
 
-        let p = lookahead(mockFailure("ERROR"));
+        let p = lookahead(failureParser("ERROR"));
         let result = p.parse(input);
 
         expect(result).toStrictEqual(ParseResult.failure(input, "ERROR"));

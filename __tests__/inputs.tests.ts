@@ -1,6 +1,5 @@
 import { toArray } from "iter-tools";
 import { IInput, createBufferInput, createArrayInput, createStringInput } from "../inputs";
-import { iterateValues, iterateInputs } from "../inputs/utils";
 
 describe.each([
     [createBufferInput, Buffer.from([65, 66, 67])],
@@ -18,16 +17,27 @@ describe.each([
     [createStringInput, "ABC", 0, 3],
     [createStringInput, "zABCD", 1, 4],
 ])("Input(%O, %O, %O, %O)", (factory: (...args: any[]) => IInput<number>, ...args: any[]) => {
+    test("skip", () => {
+        let input = factory(...args);
+
+        expect(input.skip(2)).toBe(input.next().next());
+    })
+
     test("when values iterated", () => {
         let input = factory(...args);
-        expect(toArray(iterateValues(input))).toStrictEqual([65, 66, 67]);
+        expect(toArray(input.iterateValues())).toStrictEqual([65, 66, 67]);
     });
 
     test("when consumers iterated", () => {
         let input = factory(...args);
-        let allInputs = toArray(iterateInputs(input));
+        let allInputs = toArray(input.iterateInputs());
         expect(allInputs.map(i => i.any())).toStrictEqual([true, true, true, false]);
         expect(allInputs.filter(i => i.any()).map(i => i.get())).toStrictEqual([65, 66, 67]);
+    });
+
+    test("eof", () => {
+        let input = factory(...args);
+        expect(input.eof()).toBe(input.next().next().next());
     });
 
     test("returns same consumer", () => {

@@ -11,7 +11,6 @@ class ArrayInput<T = {}> extends IInput<T> {
     private data: ReadonlyArray<T>;
     private start: number;
     private end: number;
-    private _next?: ArrayInput<T>;
 
     constructor(buffer: ReadonlyArray<T>, start: number, end: number) {
         super();
@@ -29,10 +28,7 @@ class ArrayInput<T = {}> extends IInput<T> {
         return this.data[this.start];
     }
 
-    public next(): ArrayInput<T> {
-        if (!this._next) {
-            this._next = new ArrayInput(this.data, this.start + 1, this.end);
-        }
-        return this._next;
+    protected createNext(): ArrayInput<T> {
+        return new ArrayInput(this.data, this.start + 1, this.end);
     }
 }

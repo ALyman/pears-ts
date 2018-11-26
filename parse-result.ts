@@ -1,10 +1,10 @@
 import { IInput } from "./inputs";
 
-export function isSuccessful<T,R>(r : PartialParseResult<T,R>) : r is SuccessfulParseResult<T,R> {
+export function isSuccessful<T, R>(r: PartialParseResult<T, R>): r is SuccessfulParseResult<T, R> {
     return r instanceof SuccessfulParseResult;
 }
 
-export function isFailure<T,R>(r : PartialParseResult<T,R>) : r is FailedParseResult<T> {
+export function isFailure<T, R>(r: PartialParseResult<T, R>): r is FailedParseResult<T> {
     return r instanceof FailedParseResult;
 }
 

@@ -11,7 +11,6 @@ class StringInput extends IInput<number> {
     private data: string;
     private start: number;
     private end: number;
-    private _next?: StringInput;
 
     constructor(buffer: string, start: number, end: number) {
         super();
@@ -29,10 +28,7 @@ class StringInput extends IInput<number> {
         return this.data.charCodeAt(this.start);
     }
 
-    public next(): StringInput {
-        if (!this._next) {
-            this._next = new StringInput(this.data, this.start + 1, this.end);
-        }
-        return this._next;
+    protected createNext(): StringInput {
+        return new StringInput(this.data, this.start + 1, this.end);
     }
 }

@@ -30,4 +30,15 @@ export abstract class Parser<T, R> {
     }
 
     protected abstract tryParse(input: IInput<T>, context: IParseContext): ParseResult<T, R>;
+
+    public map<U>(fn: (value: R) => U): Parser<T, U> {
+        return map(this, fn);
+    }
+
+    public many(minimum?: number, maximum?: number): Parser<T, R[]> {
+        return many(this, minimum, maximum);
+    }
 }
+
+import { map } from "./map";
+import { many } from "./many";

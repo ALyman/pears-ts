@@ -11,7 +11,6 @@ class BufferInput extends IInput<number> {
     private buffer: Buffer;
     private start: number;
     private end: number;
-    private _next?: BufferInput;
 
     constructor(buffer: Buffer, start: number, end: number) {
         super();
@@ -30,10 +29,7 @@ class BufferInput extends IInput<number> {
         return this.buffer[this.start];
     }
 
-    public next(): BufferInput {
-        if (!this._next) {
-            this._next = new BufferInput(this.buffer, this.start + 1, this.end);
-        }
-        return this._next;
+    protected createNext(): BufferInput {
+        return new BufferInput(this.buffer, this.start + 1, this.end);
     }
 }

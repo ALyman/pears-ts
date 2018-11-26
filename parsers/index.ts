@@ -6,3 +6,7 @@ export * from "./lookahead";
 export * from "./match";
 export * from "./noop";
 export * from "./sequence";
+export * from "./map";
+export * from "./many";
+
+
