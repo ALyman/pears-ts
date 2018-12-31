@@ -1,6 +1,6 @@
 {
   "name": "pears",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Pears is a strongly-typed parser-combinator framework written in TypeScript",
   "keywords": [
     "parse",

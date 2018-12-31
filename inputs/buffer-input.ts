@@ -1,6 +1,6 @@
 import { IInput } from "./input";
 
-export function createBufferInput(buffer: Buffer, start?: number, end?: number) {
+export function createBufferInput(buffer: Buffer, start?: number, end?: number): IInput<number> {
     if (typeof start === 'undefined') { start = 0; }
     if (typeof end === 'undefined') { end = buffer.byteLength; }
 

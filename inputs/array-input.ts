@@ -1,6 +1,6 @@
 import { IInput } from "./input";
 
-export function createArrayInput<T>(buffer: ReadonlyArray<T>, start?: number, end?: number) {
+export function createArrayInput<T>(buffer: ReadonlyArray<T>, start?: number, end?: number): IInput<T> {
     if (typeof start === 'undefined') { start = 0; }
     if (typeof end === 'undefined') { end = buffer.length; }
 
